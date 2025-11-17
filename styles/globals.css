@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables for dark / light */
+:root {
+  --bg: #0f1724; /* dark surface fallback */
+  --surface: #0b1020;
+  --text: #e6eef8;
+  --muted: #9aa6bf;
+  --accent: #8b5cf6;
+  --accent-bright: #7c3aed;
+}
+
+.light {
+  --bg: #0f1724; /* keep dark by default for branded look */
+  --surface: #0b1020;
+  --text: #e6eef8;
+  --muted: #a6b0c3;
+  --accent: #8b5cf6;
+  --accent-bright: #ff4d8a;
+}
+
+.dark {
+  --bg: #05060a;
+  --surface: #071025;
+  --text: #e9f0ff;
+  --muted: #9aa6bf;
+  --accent: #8b5cf6;
+  --accent-bright: #ff4d8a;
+}
+
+html, body, #__next {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* Accent utilities fallback for non-Tailwind parts */
+.accent-bg {
+  background-image: linear-gradient(135deg,var(--accent),var(--accent-bright));
+}
+
+/* small common UI tweaks */
+.glass {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Floating theme toggle button */
+.theme-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+}
